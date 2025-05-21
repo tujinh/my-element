@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, computed, inject } from 'vue'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import type { ButtonProps, ButtonExpose } from './types'
 import { BUTTON_GROUP_CTX_KEY } from './constants';
 defineOptions({

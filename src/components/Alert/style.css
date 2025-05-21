@@ -1,0 +1,81 @@
+.t-alert {
+    --t-alert-bg-color: var(--t-color-info-light-1);
+    --t-alert-border-radius: var(--t-border-radius-base);
+    --t-alert-text-color: var(--t-color-info)
+}
+
+.t-alert {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: var(--t-alert-bg-color);
+    border-radius: var(--t-alert-border-radius);
+    padding: 8px 16px;
+    box-sizing: border-box;
+    position: relative;
+    color: var(--t-alert-text-color);
+    transition: opacity 0.2s;
+}
+
+
+
+.t-alert.is-center {
+    justify-content: center;
+}
+
+.t-alert-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    cursor: pointer;
+}
+
+.t-alert-icon {
+    margin-right: 8px;
+}
+
+.t-alert-success {
+    --t-alert-text-color: var(--t-color-success);
+    --t-alert-bg-color: var(--t-color-success-light-1);
+}
+
+.t-alert-warning {
+    --t-alert-text-color: var(--t-color-warning);
+    --t-alert-bg-color: var(--t-color-warning-light-1);
+}
+
+.t-alert-error {
+    --t-alert-text-color: var(--t-color-danger);
+    --t-alert-bg-color: var(--t-color-danger-light-1);
+}
+
+.t-alert-dark {
+    color: var(--t-color-white);
+    --t-alert-bg-color: var(--t-alert-text-color);
+}
+
+.t-alert-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.is-center:not(.has-icon) .t-alert-content {
+    align-items: center;
+}
+
+
+
+
+.t-alert-title {
+    font-size: 16px;
+}
+
+.t-alert-discriptiton {
+    font-size: 13px;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}

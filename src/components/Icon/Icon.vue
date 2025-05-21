@@ -19,7 +19,6 @@ const filterProps = computed(() => {
     })
     return result
 })
-console.log(filterProps.value)
 
 const customStyles = computed(() => ({ color: props.color ?? void 0 }))
 
