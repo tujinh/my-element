@@ -2,6 +2,7 @@
 import type { IconProps } from './types'
 import { computed } from 'vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { omit } from 'lodash-es'
 
 defineOptions({
     name: 'TIcon',
@@ -10,15 +11,7 @@ defineOptions({
 
 const props = defineProps<IconProps>()
 
-const filterProps = computed(() => {
-    const result: Record<string, any> = {}
-    Object.entries(props).forEach(([key, value]) => {
-        if (key != 'color') {
-            result[key] = value
-        }
-    })
-    return result
-})
+const filterProps = computed(() => omit(props, ['color']))
 
 const customStyles = computed(() => ({ color: props.color ?? void 0 }))
 

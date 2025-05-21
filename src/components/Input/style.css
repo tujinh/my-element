@@ -1,0 +1,27 @@
+.t-input {
+    --t-input-height: 32px
+}
+
+.t-input {
+    border: var(--t-border);
+    border-radius: var(--t-border-radius-base);
+    box-sizing: border-box;
+    padding: 1px 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .1s;
+}
+
+
+.t-input-inner {
+    height: calc(var(--t-input-height) - 2px);
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0;
+}
+
+.is-focus {
+    border-color: var(--t-color-primary);
+}
