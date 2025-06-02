@@ -1,0 +1,45 @@
+.t-pagination {
+    --t-pagination-button-height: 32px;
+    --t-pagination-button-width: 32px;
+    --t-pagination-button-bg: var(--t-color-white);
+    --t-pagination-border-radius: 2px;
+    --t-pagination-font-size: 14px;
+}
+
+.t-pagination {
+    display: flex;
+}
+
+.t-pagination button {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--t-pagination-button-height);
+    background-color: var(--t-pagination-button-bg);
+    cursor: pointer;
+}
+
+
+.t-pagination-pager {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5px;
+}
+
+:deep(.t-pagination-pager-number) {
+    height: var(--t-pagination-button-height);
+    line-height: var(--t-pagination-button-height);
+    min-width: var(--t-pagination-button-width);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: antiquewhite;
+    border-radius: var(--t-pagination-border-radius);
+    font-size: var(--t-pagination-font-size);
+}

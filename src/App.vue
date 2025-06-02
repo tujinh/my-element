@@ -1,22 +1,25 @@
 <script setup lang="ts">
 import { ref, onMounted, watch, computed } from 'vue'
 
+let d = ref(new Date())
+let di = ref()
 
-const v = ref(1)
-let i = ref()
-onMounted(() => {
-    i.value.focus()
-    setTimeout(() => {
-        i.value.blur()
-    }, 1000)
-})
+const reset = () => {
+    di.value.resetPosition()
+}
+
+
+
+
 
 </script>
 
 <template>
     <div>
-        <t-input ref="i" v-model="v" placeholder="Please input value"></t-input>
+        <t-pagination :total="50"></t-pagination>
     </div>
+
+
 
 </template>
 

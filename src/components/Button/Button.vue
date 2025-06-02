@@ -8,18 +8,20 @@ defineOptions({
 
 const props = withDefaults(defineProps<ButtonProps>(), {
     tag: 'button',
-    size: 'default',
 })
 
 const slots = defineSlots()
 
 const _ref = ref<HTMLButtonElement>()
 const ctx = inject(BUTTON_GROUP_CTX_KEY, void 0)
+
 const size = computed(() => {
     return props.size ?? ctx?.size ?? ''
 })
 
+
 const type = computed(() => props.type ?? ctx?.type ?? '')
+
 
 const disabled = computed(() => props.disabled || false)
 

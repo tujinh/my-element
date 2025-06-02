@@ -1,0 +1,68 @@
+.t-calendar {
+    --t-calendar-th-color: var(--t-color-info-dark-1);
+    --t-calendar-border: 1px solid rgb(235.9, 245.3, 255);
+    --t-calender-cell-height: 80px;
+}
+
+.t-calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1px solid #ebeff5;
+}
+
+
+.t-calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.t-calendar-table th {
+    font-weight: 400;
+    padding: 12px 0;
+    color: var(--t-calendar-th-color);
+}
+
+.t-calendar-table tbody tr:first-child td {
+    border-top: var(--t-calendar-border);
+}
+
+.t-calendar-table tbody tr td {
+    padding: 0;
+    border-bottom: var(--t-calendar-border);
+    border-right: var(--t-calendar-border);
+}
+
+.t-calendar-table tbody tr td:first-child {
+    border-left: var(--t-calendar-border);
+}
+
+
+.t-calendar-cell {
+    padding: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: var(--t-calender-cell-height);
+}
+
+.t-calendar-cell:hover {
+    background-color: var(--t-color-primary-light-1);
+}
+
+
+.next .t-calendar-cell,
+.prev .t-calendar-cell {
+    color: var(--t-color-info);
+}
+
+.is-today .t-calendar-cell,
+.is-selected .t-calendar-cell {
+    color: var(--t-color-primary);
+
+}
+
+.is-selected .t-calendar-cell {
+    background-color: var(--t-color-primary-light-0);
+}

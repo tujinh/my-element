@@ -1,0 +1,108 @@
+.t-overlay {
+    --t-overlay-color: rgba(0, 0, 0, 0.5);
+    --t-dialog-color: var(--t-color-white);
+    --t-dialog-border-radius: var(--t-border-radius-base);
+    --t-dialog-padding: 16px;
+    --t-dialog-body-color: var(--t-color-info-dark-1);
+}
+
+
+.t-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* width: 100%; */
+    height: 100%;
+    background-color: var(--t-overlay-color);
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.t-dialog {
+    background-color: var(--t-dialog-color);
+    border-radius: var(--t-border-radius-base);
+    position: relative;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    align-self: flex-start;
+    margin-top: 15vh;
+    box-shadow: 0px 12px 32px 4px rgba(0, 0, 0, .04),
+        0px 8px 20px rgba(0, 0, 0, .08);
+    will-change: transform;
+    transition: .2s;
+    user-select: none;
+}
+
+.is-dragging.t-dialog {
+    transition: none;
+}
+
+.hide-modal {
+    --t-overlay-color: rgba(0, 0, 0, 0);
+}
+
+.dialog-center.t-dialog {
+    margin: auto;
+}
+
+.content-center .t-dialog-header,
+.content-center .t-dialog-footer {
+    text-align: center;
+}
+
+.is-draggable .t-dialog-header {
+    cursor: move;
+}
+
+.t-dialog-header {
+    text-align: left;
+    padding-bottom: var(--t-dialog-padding);
+}
+
+.t-dialog-body {
+    font-size: 14px;
+    color: var(--t-dialog-body-color);
+}
+
+.t-dialog-title {
+    font-size: 18px;
+}
+
+.t-dialog-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: var(--t-color-info-light-2);
+    cursor: pointer;
+    transition: color 0.1s;
+}
+
+.t-dialog-close:hover {
+    color: var(--t-color-primary-light-2);
+}
+
+.t-dialog-footer {
+    padding-top: var(--t-dialog-padding);
+    text-align: right;
+
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .3s;
+
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.fade-enter-from .t-dialog,
+.fade-leave-to .t-dialog {
+    transition: .2s;
+    margin-top: 10vh;
+}

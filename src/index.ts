@@ -1,5 +1,37 @@
-import { TButton, TIcon, TButtonGroup, TCollapse, TCollapseItem, TAlert, TPopconfirm, TTooltip, TSwitch, TInput } from "./components";
+import {
+    TButton,
+    TIcon,
+    TButtonGroup,
+    TCollapse,
+    TCollapseItem,
+    TAlert,
+    TPopconfirm,
+    TTooltip,
+    TSwitch,
+    TInput,
+    TBadge,
+    TDialog,
+    TBackTop,
+    TCalendar,
+    TPagination
+} from "./components";
 import { makeInstaller } from "./utils/install";
 
 
-export default makeInstaller([TButton, TIcon, TButtonGroup, TCollapse, TCollapseItem, TAlert, TPopconfirm, TTooltip, TSwitch, TInput]);
+export default makeInstaller([
+    TPagination,
+    TCalendar,
+    TBackTop,
+    TButton,
+    TIcon,
+    TButtonGroup,
+    TCollapse,
+    TCollapseItem,
+    TAlert,
+    TPopconfirm,
+    TTooltip,
+    TSwitch,
+    TInput,
+    TBadge,
+    TDialog
+]);

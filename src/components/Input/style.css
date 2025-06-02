@@ -1,5 +1,7 @@
 .t-input {
-    --t-input-height: 32px
+    --t-input-height: 32px;
+    --t-input-text-color: var(--t-color-info-dark-1);
+    --t-input-bg-color: var(--t-color-white);
 }
 
 .t-input {
@@ -7,12 +9,42 @@
     border-radius: var(--t-border-radius-base);
     box-sizing: border-box;
     padding: 1px 11px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transition: .1s;
+    background-color: var(--t-input-bg-color);
+}
+
+.t-textarea {
+    border: var(--t-border);
+    border-radius: var(--t-border-radius-base);
+    box-sizing: border-box;
     transition: .1s;
 }
 
+.t-textarea-inner {
+    width: 100%;
+    padding: 5px 11px;
+    border: none;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.t-input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+
+.is-disable {
+    --t-input-text-color: var(--t-color-info-light-2);
+    --t-input-bg-color: var(--t-color-info-light-0);
+    cursor: not-allowed;
+}
+
+.is-disable .t-input-inner {
+    cursor: not-allowed;
+}
 
 .t-input-inner {
     height: calc(var(--t-input-height) - 2px);
@@ -20,8 +52,21 @@
     outline: none;
     border: none;
     padding: 0;
+    background-color: var(--t-input-bg-color);
+    color: var(--t-input-text-color);
+}
+
+.t-input-clear,
+.t-input-password {
+    cursor: pointer;
 }
 
 .is-focus {
     border-color: var(--t-color-primary);
+}
+
+.t-input-suffix {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

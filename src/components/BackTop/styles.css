@@ -1,0 +1,31 @@
+.t-backtop {
+    --t-backtop-size: 40px
+}
+
+.t-backtop {
+    position: fixed;
+    width: var(--t-backtop-size);
+    height: var(--t-backtop-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--t-color-primary);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.12);
+    border-radius: 50%;
+    background-color: var(--t-color-white);
+}
+
+.t-backtop:hover {
+    background-color: var(--t-color-info-light-1);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .3s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}

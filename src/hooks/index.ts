@@ -1,5 +1,5 @@
 import useClickOutside from "./useClickOutside";
 
 import useEventListener from "./useEventListener";
-
-export { useClickOutside, useEventListener }
+import useFocusController from "./useFocusController";
+export { useClickOutside, useEventListener, useFocusController }

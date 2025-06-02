@@ -1,0 +1,50 @@
+.t-badge {
+    --t-badge-color: var(--t-color-danger);
+    --t-badge-text-size: 12px;
+    --t-badge-padding: 6px;
+    --t-badge-height: 18px;
+    --t-badge-border-radius: 10px;
+}
+
+.t-badge {
+    display: inline-block;
+    position: relative;
+}
+
+.t-badge-primary {
+    --t-badge-color: var(--t-color-primary);
+}
+
+.t-badge-success {
+    --t-badge-color: var(--t-color-success);
+}
+
+.t-badge-warning {
+    --t-badge-color: var(--t-color-warning);
+}
+
+.t-badge-info {
+    --t-badge-color: var(--t-color-info);
+}
+
+.t-badge-content {
+    height: var(--t-badge-height);
+    background-color: var(--t-badge-color);
+    color: var(--t-color-white);
+    position: absolute;
+    font-size: var(--t-badge-text-size);
+    padding: 0 var(--t-badge-padding);
+    border-radius: var(--t-badge-border-radius);
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.is-dot {
+    --t-badge-height: 8px;
+    width: var(--t-badge-height);
+    --t-badge-border-radius: 50%;
+    --t-badge-padding: 0;
+}
