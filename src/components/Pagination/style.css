@@ -4,11 +4,38 @@
     --t-pagination-button-bg: var(--t-color-white);
     --t-pagination-border-radius: 2px;
     --t-pagination-font-size: 14px;
+    --t-pagination-pager-bg: var(--t-color-primary)
 }
 
 .t-pagination {
     display: flex;
+    gap: 3px;
+    align-items: center;
 }
+
+.t-pagination.is-background {
+    --t-pagination-button-bg: var(--t-color-info-light-1);
+}
+
+.t-pagination.is-background :deep(.t-pagination-pager-number.is-current) {
+    background-color: var(--t-color-primary);
+    color: var(--t-color-white);
+}
+
+.t-pagination.is-background.is-disable :deep(.t-pagination-pager-number.is-current) {
+    background-color: var(--t-color-info-light-2);
+    color: var(--t-color-info-dark-1);
+}
+
+.t-pagination.is-background.is-disable :deep(.t-pagination-pager-number.is-current:hover) {
+    color: var(--t-color-info-dark-1);
+}
+
+.t-pagination.is-background.is-disable :deep(.t-pagination-pager-number) {
+    background-color: var(--t-color-info-light-1);
+    color: var(--t-color-info-light-2);
+}
+
 
 .t-pagination button {
     border: none;
@@ -16,10 +43,33 @@
     align-items: center;
     justify-content: center;
     height: var(--t-pagination-button-height);
+    min-width: var(--t-pagination-button-width);
     background-color: var(--t-pagination-button-bg);
     cursor: pointer;
 }
 
+.t-pagination-large {
+    --t-pagination-button-height: 40px;
+    --t-pagination-button-width: 40px;
+    --t-pagination-font-size: 16px;
+}
+
+.t-pagination-small {
+    --t-pagination-button-height: 24px;
+    --t-pagination-button-width: 24px;
+    --t-pagination-font-size: 12px;
+}
+
+.t-pagination-prev:hover,
+.t-pagination-next:hover {
+    color: var(--t-color-primary);
+}
+
+.t-pagination-prev.is-disable:hover,
+.t-pagination-next.is-disable:hover {
+    color: light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+    cursor: not-allowed;
+}
 
 .t-pagination-pager {
     padding: 0px;
@@ -29,6 +79,23 @@
     justify-content: space-evenly;
     align-items: center;
     gap: 5px;
+    justify-self: flex-end;
+}
+
+.t-pagination.is-disable :deep(.t-pagination-pager-number),
+.t-pagination.is-disable :deep(.t-pagination-pager-more) {
+    color: var(--t-color-info-light-2);
+}
+
+.t-pagination.is-disable :deep(.t-pagination-pager-number.is-current) {
+    color: var(--t-color-info-light-2);
+}
+
+
+.t-pagination.is-disable :deep(.t-pagination-pager-number:hover),
+.t-pagination.is-disable :deep(.t-pagination-pager-more:hover) {
+    cursor: not-allowed;
+    color: var(--t-color-info-light-2);
 }
 
 :deep(.t-pagination-pager-number) {
@@ -39,7 +106,67 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background-color: antiquewhite;
+    background-color: var(--t-pagination-button-bg);
     border-radius: var(--t-pagination-border-radius);
     font-size: var(--t-pagination-font-size);
+}
+
+:deep(.t-pagination-pager-number.is-current) {
+    font-weight: 700;
+    color: var(--t-color-primary);
+
+}
+
+
+:deep(.t-pagination-pager-number:hover) {
+    color: var(--t-color-primary);
+}
+
+:deep(.t-pagination-pager-more) {
+    height: var(--t-pagination-button-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    min-width: var(--t-pagination-button-width);
+    font-size: var(--t-pagination-font-size);
+    background-color: var(--t-pagination-button-bg);
+    border-radius: var(--t-pagination-border-radius);
+}
+
+:deep(.t-pagination-pager-more:hover) {
+    color: var(--t-color-primary);
+}
+
+:deep(.t-pagination-pager-number:hover) {
+    color: var(--t-color-primary);
+}
+
+.t-pagination-right-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.t-pagination-total {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--t-color-info-drak-1);
+    font-size: var(--t-pagination-font-size);
+}
+
+.t-pagination-jumper {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+:deep(.t-pagination-jumper-input) {
+    width: 56px;
+}
+
+:deep(.t-pagination-jumper-input input) {
+    text-align: center;
 }

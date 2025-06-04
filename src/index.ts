@@ -13,12 +13,14 @@ import {
     TDialog,
     TBackTop,
     TCalendar,
-    TPagination
+    TPagination,
+    TTree
 } from "./components";
 import { makeInstaller } from "./utils/install";
 
 
 export default makeInstaller([
+    TTree,
     TPagination,
     TCalendar,
     TBackTop,

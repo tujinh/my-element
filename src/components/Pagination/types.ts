@@ -10,7 +10,7 @@ export interface PaginationProps {
     pageSizes?: number[]
     layout?: string
     pageCount?: number
-    pagerCount?: number
+    pagerCount?: 5 | 7 | 9 | 11 | 13 | 15 | 17 | 19 | 21
     currentPage?: number
     hideOnSinglePage?: boolean
     disabled?: boolean
