@@ -1,0 +1,37 @@
+.t-tree {
+    --t-tree-node-bg: var(--t-color-info-light-1)
+}
+
+.t-tree-node {}
+
+.t-tree-node-content {
+
+    padding: 2px 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+
+
+.t-tree-node-content:hover {
+    background-color: var(--t-tree-node-bg);
+}
+
+.t-tree-node-icon {
+    transition: .3s;
+    margin-top: 3px;
+}
+
+.t-tree-node-checkbox {
+    margin-top: 3px;
+}
+
+.t-tree-node-icon.is-showchildren {
+    transform: rotate(90deg);
+}
+
+.t-tree-node-children {
+    transition: .3s;
+}

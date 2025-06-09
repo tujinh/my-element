@@ -14,12 +14,16 @@ import {
     TBackTop,
     TCalendar,
     TPagination,
-    TTree
+    TTree,
+    TCheckBox,
+    TCheckBoxGroup
 } from "./components";
 import { makeInstaller } from "./utils/install";
 
 
 export default makeInstaller([
+    TCheckBoxGroup,
+    TCheckBox,
     TTree,
     TPagination,
     TCalendar,
