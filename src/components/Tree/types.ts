@@ -1,4 +1,4 @@
-
+import type { Ref } from "vue"
 
 export type Props = {
     label?: string | ((data: TreeProps['data'], node) => string)
@@ -10,14 +10,17 @@ export type Props = {
 
 export interface TreeProps {
     level?: number
-    parentTreeNodeId?: number
+    treeNodeId?: number
+    parent?: TreeProps['data'][number]
     data: Array<{ [key: string]: any }>
     emptyText?: string
     nodeKey?: string
     props?: Props
     showCheckbox?: boolean
     defaultCheckedKeys?: (string | number)[]
-    defaultExpandedKeys?: (string | number)[]
+    defaultExpandedKeys?: (string | number)[],
+    accordion?: boolean
+    draggable?: boolean
 }
 
 export interface TreeEmits {

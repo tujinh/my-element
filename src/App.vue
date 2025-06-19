@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, watch, computed } from 'vue'
-
+import { TNotification } from './index';
 const data = [
     {
         id: 1,
@@ -57,47 +57,47 @@ const data = [
 ]
 
 
-const check = ref(true)
-const check1 = ref(false)
-const check2 = ref(false)
-// watch(check, (newVal) => {
-//     console.log(newVal)
-// })
 
-const checkList = ref<any[]>(['123', true])
-// watch(checkList, (n) => {
-//     console.log(n)
-// })
-const d = ref(false)
 
 const t = ref()
 
-const getNode = () => {
-    console.log(t.value.getCheckedNodes(true, true))
+let id = 1000
+const generateData = () => {
+    const data = []
+    for (let i = 1; i <= 15; i++) {
+        data.push({
+            key: i,
+            label: `Option ${i}`,
+            disabled: i % 4 === 0,
+        })
+    }
+    return data
 }
-const getkey = () => {
-    console.log(t.value.getCheckedKeys(true))
-}
+const data1 = ref(generateData())
+const value = ref([2, 5])
 
-const setnode = () => {
-    t.value.setChecked([3, 4, 6, 9, 11], true)
+let a
+const hc = () => {
+    a = TNotification.primary({
+        title: 'Title',
+        message: 'This is a message that does not automatically close',
+        duration: 0,
+    })
+}
+const cl = () => {
+    TNotification.closeAll()
 }
 
 </script>
 
 <template>
     <div>
-        <t-button @click="getNode">getnode</t-button>
-        <t-button @click="getkey">getkey</t-button>
-        <t-button @click="setnode">setnode</t-button>
-        <t-tree ref="t" :data="data" show-checkbox node-key="id" :default-expanded-keys="[2, 3]"></t-tree>
-        <!-- <t-check-box v-model="checkAll" :indeterminate="isIndeterminate" @change="handleCheckAllChange"></t-check-box>
-        <t-check-box-group @change="handleAll" :disabled="d" v-model="checkList">
-            <t-check-box label="option" value="123"></t-check-box>
-            <t-check-box label="option2" :value="456"></t-check-box>
-            <t-check-box label="option3" :value="true"></t-check-box>
-        </t-check-box-group> -->
-
+        <t-button @click="hc">click</t-button>
+        <t-button @click="cl">close</t-button>
+        <!-- <t-tree ref="t" :data="data" node-key="id">
+        </t-tree> -->
+        <!-- <t-transfer :data="data1" v-model="value" :titles="['Source', 'Target']"
+            :button-texts="['To left', 'To right']"></t-transfer> -->
     </div>
 
 

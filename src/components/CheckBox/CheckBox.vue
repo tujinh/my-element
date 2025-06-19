@@ -75,7 +75,10 @@ const changeCheck = () => {
             <input @click.stop="changeCheck" class="t-checkbox-original" type="checkbox">
             <span class="t-checkbox-inner"></span>
         </span>
-        <span v-show="label" class="t-checkbox-label">{{ label }}</span>
+        <span v-if="$slots.default?.()" class="t-checkbox-label">
+            <slot></slot>
+        </span>
+        <span v-else v-show="label" class="t-checkbox-label">{{ label }}</span>
     </label>
 </template>
 

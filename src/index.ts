@@ -16,12 +16,15 @@ import {
     TPagination,
     TTree,
     TCheckBox,
-    TCheckBoxGroup
+    TCheckBoxGroup,
+    TTransfer,
+    TNotification
 } from "./components";
 import { makeInstaller } from "./utils/install";
 
 
 export default makeInstaller([
+    TTransfer,
     TCheckBoxGroup,
     TCheckBox,
     TTree,
@@ -41,3 +44,7 @@ export default makeInstaller([
     TBadge,
     TDialog
 ]);
+
+export {
+    TNotification
+}

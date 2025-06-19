@@ -5,12 +5,13 @@
 .t-tree-node {}
 
 .t-tree-node-content {
-
+    height: 26px;
     padding: 2px 5px;
     display: flex;
     align-items: center;
     gap: 5px;
     cursor: pointer;
+
 }
 
 
@@ -24,6 +25,12 @@
     margin-top: 3px;
 }
 
+.t-tree-node-label {
+    flex: 1;
+    position: relative;
+
+}
+
 .t-tree-node-checkbox {
     margin-top: 3px;
 }
@@ -34,4 +41,26 @@
 
 .t-tree-node-children {
     transition: .3s;
+}
+
+.t-tree-node-drag-enter.top .t-tree-node-label::before,
+.t-tree-node-drag-enter.top.t-tree-node-label::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: blue;
+    top: 0px;
+    left: 0;
+}
+
+.t-tree-node-drag-enter.bottom .t-tree-node-label::after,
+.t-tree-node-drag-enter.bottom.t-tree-node-label::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px;
+    left: 0;
+    background: blue;
+    bottom: 0px;
 }
